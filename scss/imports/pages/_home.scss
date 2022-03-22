@@ -1,0 +1,375 @@
+// CSS HOMEPAGE
+
+//platforms
+.platforms {
+    display: flex;
+    justify-content: space-between;
+    &__desc {
+        flex: 1;
+        text-align: left;
+        padding-top: 170px;
+        padding-bottom: 150px;
+        padding-left: 111px;
+        padding-right: 137px;
+        h4 {
+            @include text(1.6rem, em, 5rem, $red-cl, uppercase);
+            letter-spacing: 0.2em;
+        }
+        h3 {
+            @include text(var(--h3-fs), em, var(--h3-lh), $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 555px;
+            margin-bottom: 45px;
+            span {
+                color: $red-cl;
+            }
+        }
+        p {
+            @include text(1.6rem, em, 5rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 585px;
+            opacity: 0.5;
+        }
+    }
+    &__thumb {
+        flex: 1;
+        overflow: hidden;
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    //mobile 
+    @include xs {
+        flex-direction: column;
+        &__desc {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            padding-left: 60px;
+            padding-right: 60px;
+            h3 {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    //tablet
+    @include sm {
+        flex-direction: column;
+        &__desc {
+            padding-top: 80px;
+            padding-bottom: 80px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+    }
+}
+
+//features
+.features {
+    background-image: url(../img/section3-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background: #f6f5f3;
+    padding-top: 134px;
+    padding-bottom: 184px;
+    &__title {
+        text-align: center;
+        h4 {
+            @include text(1.6rem, em, 5rem, $red-cl, uppercase);
+            letter-spacing: 0.2em;
+        }
+        h3 {
+            @include text(var(--h3-fs), em, var(--h3-lh), $black-cl, none);
+            letter-spacing: 0.04em;
+        }
+    }
+    &__awesome {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+        margin-top: 90px;
+        &-item {
+            text-align: center;
+            img {
+                cursor: pointer;
+            }
+            h5 {
+                @include text(2.2rem, em, 4.997rem, $black-cl, none);
+                letter-spacing: 0.04em;
+                margin-top: 25px
+            }
+            p {
+                @include text(1.6rem, em, 2.6rem, $black-cl, none);
+                letter-spacing: 0.04em;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    //mobile
+    @include xs {
+        background-image: none;
+        background: #f6f5f3;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        &__awesome {
+            grid-template-columns: repeat(1,1fr);
+            margin-top: 60px;
+        }
+    }
+    //tablet
+    @include sm {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        &__awesome {
+            margin-top: 80px;
+        }
+    }
+}
+
+//responsive
+.responsive {
+    display: flex;
+    gap: 66px;
+    &__thumb {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -30%));
+        }
+    }
+    &__desc {
+        padding-top: 137px;
+        padding-bottom: 147px;
+        flex: 1;
+        h4 {
+            @include text(1.6rem, em, 5rem, $red-cl, uppercase);
+            letter-spacing: 0.2em;
+        }
+        h3 {
+            @include text(var(--h3-fs), em, var(--h3-lh), $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 433px;
+            margin-bottom: 35px;
+            span {
+                color: $red-cl;
+            }
+        }
+        p {
+            @include text(1.6rem, em, 2.6rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 505px;
+            opacity: 0.5;
+        }
+    }
+    //mobile
+    @include xs {
+        flex-direction: column;
+        &__thumb {
+            display: none;
+        }
+        &__desc {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+    //tablet
+    @include sm {
+        gap: 40px;
+        &__desc {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-right: 60px;
+        }
+    }  
+}
+
+//founder
+.founder {
+    background-image: url(../img/section5-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 110px;
+    padding-bottom: 93px;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        &-item {
+            text-align: center;
+            .thumb {
+                span {
+                    @include text(1.599rem, em, 4.997rem, $red-cl, none);
+                }
+                p {
+                    @include text(2.2rem, em, 4.997rem, $white-cl, none);
+                    letter-spacing: 0.04em;
+                    max-width: 375px;
+                    margin-bottom: -20px;
+                }
+            }
+            .desc {
+                @include text(1.6rem, er, 2.6rem, $white-cl, none);
+                font-style: italic;
+                letter-spacing: 0.04em;
+                opacity: 0.5;
+            }
+        }
+    }
+    &__logo {
+        @include mid(true);
+        gap: 75px;
+        margin-top: 87px;
+        cursor: pointer;
+    }
+
+    //mobile
+    @include xs {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+        &__logo {
+            display: none;
+        }
+    }
+    //tablet 
+    @include sm {
+        &__logo {
+            gap: 30px;
+        }
+    }
+}
+
+//awesome
+.awesome {
+    background: #f6f5f3;
+    padding-top: 104px;
+    .container {
+        @include mid(true);
+        flex-direction: column;
+    }
+    h4 {
+        @include text(1.6rem, em, 5rem, $red-cl, uppercase);
+        letter-spacing: 0.2em;
+        text-align: center
+    }
+    h3 {
+        @include text(var(--h3-fs), em, var(--h3-lh), $black-cl, none);
+        letter-spacing: 0.04em;
+        text-align: center
+    }
+    p {
+        @include text(1.6rem, em, 2.6rem, $black-cl, none);
+        letter-spacing: 0.04em;
+        max-width: 650px;
+        text-align: center;
+        margin-top: 38px;
+        margin-bottom: 100px;
+        opacity: 0.5;
+    }
+
+    //mobile
+    @include xs {
+        padding-top: 80px;
+        p {
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+//signup
+.signup {
+    background: #323969;
+    padding-top: 92px;
+    padding-bottom: 83px;
+    h4 {
+        @include text(1.6rem, em, 5rem, $red-cl, uppercase);
+        letter-spacing: 0.2em;
+        text-align: center
+    }
+    h3 {
+        @include text(var(--h3-fs), em, var(--h3-lh), $white-cl, none);
+        letter-spacing: 0.04em;
+        text-align: center
+    }
+    &__trynow {
+        @include mid(true);
+        gap: 30px;
+        margin-top: 90px;
+        padding-left: 20px;
+        padding-right: 20px;
+        input {
+            border: 2px solid #999cb4;
+            border-radius: 5px;
+            width: 260px;
+            height: 47px;
+            padding-left: 28px;
+            background: #464c77;
+            outline: none;
+            color: $white-cl;
+        }
+        ::placeholder {
+            @include text(1.6rem, er, 7.5rem, $white-cl, uppercase);
+            letter-spacing: 0.04em;
+        }
+        button {
+            cursor: pointer;
+            border: 1px solid $red-cl;
+            border-radius: 5px;
+            width: 260px;
+            height: 47px;
+            background: $red-cl;
+
+            @include mid(true);
+            @include text(1.6rem, er, 5.952rem, $white-cl, uppercase);
+        }
+    }
+    p {
+        margin-top: 55px;
+        @include text(1.6rem, er, 7.5rem, $white-cl, none);
+        letter-spacing: 0.04em;
+        text-align: center;
+        opacity: 0.5;
+        span {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    //mobile
+    @include xs {
+        padding-top: 80px;
+        padding-bottom: 70px;
+        &__trynow {
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 70px;
+        }
+        p {
+            margin-top: 30px;
+            font-size: 1.4rem;
+        }
+    }
+    //tablet 
+    @include sm {
+        &__trynow {
+            flex-direction: column;
+            
+        }
+    }
+}

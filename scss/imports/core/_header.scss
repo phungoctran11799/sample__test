@@ -1,0 +1,90 @@
+// css header
+
+.header {
+    position: relative;
+    &__content {
+        @include mid();
+        z-index: 100;
+        &-title {
+            h2 {
+                @include text(var(--h2-fs), et, var(--h2-lh), $black-cl, none);
+                letter-spacing: 0.04em;
+                text-align: center;
+                max-width: 750px;
+
+            }
+        }
+        &-btn {
+            @include mid(true);
+            flex-direction: column;
+            .play {
+                cursor: pointer;
+                position: relative;
+                border: 1px solid #8286a3;
+                background: #8286a3;    
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+
+                margin-top: 59px;
+                margin-bottom: 40px;
+                svg {
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-35%, -50%));
+                    position: absolute;
+                }
+
+                //mobile
+                @include xs {
+                    margin-top: 40px;
+                    margin-bottom: 30px;
+                }
+            }
+            span {
+                cursor: pointer;
+                border: 1px solid $red-cl;
+                background: $red-cl;
+                height: 50px;
+                width: 190px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include text(1.6rem, er, 7.5rem, $white-cl, uppercase);
+                letter-spacing: 0.2em;
+            }
+            p {
+                @include text(1.4rem, er, 7.5rem, $black-cl, none);
+                letter-spacing: 0.04em;
+                opacity: 0.5;
+                
+                //mobile
+                @include xs {
+                    font-size: 1.3rem;
+                }
+            }
+            
+        }
+    }
+
+    &__banner {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        img {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+
+}
+

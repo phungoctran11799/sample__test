@@ -1,0 +1,157 @@
+// css footer
+.footer {
+    padding-top: 90px;
+    padding-bottom: 97px;
+    margin-left: 44px;
+    .container {
+        display: flex;
+        gap: 70px;
+    }
+    &__contact {
+        img {
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        p {
+            @include text(1.4rem, em, 2.6rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 265px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+    &__support {
+        h4 {
+            @include text(2.2rem, em, 4.997rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+        p {
+            @include text(1.4rem, em, 2.6rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 265px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+    &__about {
+        h4 {
+            @include text(2.2rem, em, 4.997rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+        p {
+            @include text(1.4rem, em, 2.6rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            max-width: 265px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
+   &__newsletter {
+        h4 {
+            @include text(2.2rem, em, 4.997rem, $black-cl, none);
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+        &-mail {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            input {
+                border: 1px solid #f6f6f6;
+                border-radius: 5px;
+                width: 260px;
+                height: 47px;
+                padding-left: 28px;
+                background: #f6f6f6;
+                outline: none;
+                color: $black-cl;
+    
+                @include mid(true);
+            }
+            ::placeholder {
+                opacity: 0.5;
+            }
+            a {
+                img {
+                    position: absolute;
+                    width: 52x;
+                    height: 47px;
+
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(168%, -50%));
+                }
+            }
+        }
+        &-social {
+            cursor: pointer;
+            @include mid(true);
+            gap: 30px;
+            margin-top: 20px;
+        }
+   }
+
+   //mobile
+   @include xs {
+    padding-top: 70px;
+    padding-bottom: 70px;
+        .container {
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__contact {
+            img {
+                margin-bottom: 10px;
+            }
+        }
+        &__support {
+            h4 {
+                margin-bottom: 10px;
+            }
+        }
+        &__about {
+            h4 {
+                margin-bottom: 10px;
+            }           
+        }
+        &__newsletter {
+            h4 {
+                margin-bottom: 10px;
+            }
+            &-social {
+                justify-content: flex-start;
+            }
+        }
+   }
+   //tablet
+   @include sm {
+    .container {
+        gap: 30px;
+    }
+    &__contact {
+        img {
+            margin-bottom: 15px;
+        }
+        p {
+            margin-top: 44px;
+        }
+    }
+    &__support {
+        h4 {
+            margin-bottom: 64px;
+        }
+    }
+    &__about {
+        h4 {
+            margin-bottom: 15px;
+        }           
+    }
+    &__newsletter {
+        h4 {
+            margin-bottom: 64px;
+        }
+    }
+}
+}
